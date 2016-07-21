@@ -1,0 +1,20 @@
+<h1>Listing Active Orders</h1>
+<p>Please run "<b>rake csv:import</b>" for importing or updating the csv data</p>
+
+<% @orders.each do |order| %>
+ <h3>Category: <b><u><%= order.category %></u></b></h3>
+ <table class="table">
+    <thead>
+      <tr>
+        <th>Patient Name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% order.patients.each do |patient| %>
+        <tr>
+          <td><%= patient.patient_name %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
